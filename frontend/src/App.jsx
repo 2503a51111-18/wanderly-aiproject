@@ -3,7 +3,7 @@ import React, { useEffect, useMemo, useState } from "react";
 import InteractiveMap from "./InteractiveMap";
 import "./styles.css";
 
-const API = "http://127.0.0.1:8001/api";
+const API = "https://wanderly-backend-1wr6.onrender.com/api";
 
 const FALLBACK_IMAGE =
   "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1200&q=80";
