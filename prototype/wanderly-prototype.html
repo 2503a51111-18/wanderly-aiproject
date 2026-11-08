@@ -1,0 +1,25 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Wanderly Prototype</title>
+<style>
+*{box-sizing:border-box}body{margin:0;font-family:Arial,sans-serif;background:#f7f9fc;color:#172033}
+nav{height:72px;background:white;border-bottom:1px solid #e5e7eb;display:flex;align-items:center;justify-content:space-between;padding:0 6%}.logo{font-size:24px;font-weight:900;color:#2563eb}.logo span{color:#172033}
+nav a{margin:0 12px;color:#64748b}.guest{background:#eff6ff;color:#2563eb;padding:10px 15px;border-radius:20px;font-weight:700}
+.hero{padding:75px 6%;display:flex;gap:50px;align-items:center;background:linear-gradient(115deg,#eff6ff,#fff)}.hero>div{flex:1}.eyebrow{color:#2563eb;font-weight:900;letter-spacing:1px;font-size:12px}.hero h1{font-size:55px;line-height:1;margin:14px 0}.hero p{font-size:18px;color:#667085;line-height:1.6}
+.search{background:white;padding:10px;border-radius:16px;display:flex;box-shadow:0 15px 35px #0001}.search input{flex:1;border:0;padding:14px;outline:0}.search button{border:0;background:#2563eb;color:white;padding:12px 20px;border-radius:10px;font-weight:800}
+.map{height:330px;border-radius:25px;background:#bfdbfe;position:relative;overflow:hidden}.grid{position:absolute;inset:0;background-image:linear-gradient(#fff8 1px,transparent 1px),linear-gradient(90deg,#fff8 1px,transparent 1px);background-size:45px 45px}.pin{position:absolute;font-size:32px}.p1{top:60px;left:20%}.p2{top:45%;right:20%}.p3{bottom:50px;left:45%}
+section{padding:55px 6%}.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}.card{background:white;border:1px solid #e5e7eb;border-radius:18px;overflow:hidden}.photo{height:140px;background:#93c5fd;display:grid;place-items:center;color:white;font-weight:900}.body{padding:16px}.planner{background:white;border:1px solid #e5e7eb;border-radius:20px;padding:30px;display:grid;grid-template-columns:1fr 1fr;gap:35px}.form{background:#f8fafc;padding:22px;border-radius:16px}.form label{display:block;font-weight:800;font-size:12px;margin:12px 0}.form input,.form select{width:100%;padding:12px;border:1px solid #dbe1ea;border-radius:9px}.form button{width:100%;margin-top:10px;padding:13px;border:0;border-radius:10px;background:#2563eb;color:white;font-weight:800}
+@media(max-width:800px){.hero{flex-direction:column}.cards{grid-template-columns:1fr 1fr}.planner{grid-template-columns:1fr}}@media(max-width:500px){.cards{grid-template-columns:1fr}nav a{display:none}}
+</style></head>
+<body>
+<nav><div class="logo">Wander<span>ly</span></div><div><a>Explore</a><a>Hotels</a><a>Planner</a><a>My Trips</a></div><div class="guest">Demo Traveler</div></nav>
+<section class="hero"><div><div class="eyebrow">AI-ASSISTED SMART TOURISM</div><h1>Plan less.<br>Experience more.</h1><p>Discover destinations, hotels and experiences based on your destination, budget and interests.</p><div class="search"><input id="s" placeholder="Where do you want to go? e.g. Hyderabad"><button onclick="go()">Explore</button></div><p id="msg"></p></div><div class="map"><div class="grid"></div><span class="pin p1">📍</span><span class="pin p2">🏨</span><span class="pin p3">🍴</span></div></section>
+<section><h2>Popular destinations</h2><p>Curated starting points for your next trip.</p><div class="cards">
+<div class="card"><div class="photo">HYDERABAD</div><div class="body"><h3>Hyderabad</h3><p>History • Food • Culture</p><b>★ 4.7</b></div></div>
+<div class="card"><div class="photo">GOA</div><div class="body"><h3>Goa</h3><p>Beaches • Relax • Nightlife</p><b>★ 4.8</b></div></div>
+<div class="card"><div class="photo">KERALA</div><div class="body"><h3>Kerala</h3><p>Nature • Backwaters</p><b>★ 4.9</b></div></div>
+<div class="card"><div class="photo">JAIPUR</div><div class="body"><h3>Jaipur</h3><p>Forts • Heritage • Shopping</p><b>★ 4.6</b></div></div>
+</div></section>
+<section><div class="planner"><div><div class="eyebrow">TRIP PLANNER</div><h2>Build a trip around your needs.</h2><p>Select destination, days, budget and interest. The final application sends these values to the FastAPI recommendation service.</p></div><div class="form"><label>DESTINATION<input value="Hyderabad"></label><label>DAYS<input type="number" value="3"></label><label>BUDGET (₹)<input type="number" value="10000"></label><label>INTEREST<select><option>History</option><option>Food</option><option>Nature</option><option>Beaches</option></select></label><button onclick="alert('Prototype: smart itinerary generated')">Create my plan</button></div></div></section>
+<script>function go(){let v=document.getElementById('s').value.trim();document.getElementById('msg').textContent=v?'Showing travel options for '+v+'.':'Enter a destination.'}</script>
+</body></html>

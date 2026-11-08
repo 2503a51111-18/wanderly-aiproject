@@ -1,0 +1,23 @@
+# Python
+**/.venv/
+**/venv/
+**/__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Environment variables
+.env
+.env.*
+!.env.example
+
+# Node.js
+**/node_modules/
+**/dist/
+**/build/
+
+# VS Code
+.vscode/
+
+# System files
+Thumbs.db
+wanderly-aiproject/
